@@ -1,0 +1,64 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.main-head {
+  padding: 6%;
+}
+.full-header {
+  margin: -77px 117px;
+  box-shadow: 3px 5px 10px;
+}
+.list-head {
+  margin-left: -45px;
+  margin-right: 468px;
+}
+.list {
+  margin: 1px 12px;
+  padding: 0 4px;
+}
+.slide-image {
+  width: 97%;
+  margin: 16px 15px;
+}
+.upcom {
+  margin: 1px 14px;
+  padding: 8px 0;
+  margin-right: 306px;
+  display: flex;
+}
+.event-heading {
+  margin-left: 65px;
+}
+.arrow-btn {
+  display: flex;
+  float: right;
+  cursor: pointer;
+  margin-left: 417px;
+  margin-right: -259px;
+  margin-top: 10px;
+}
+.eventCard {
+  display: flex;
+  margin: 10px 13px;
+  flex-wrap: wrap;
+  margin-bottom: 33px;
+}
+.event-btn {
+  margin: 16px 49px;
+}
+.event-img-dist {
+  margin: 0 16px;
+  margin-right: 150px;
+  margin-bottom: 30px;
+}
+.live {
+  margin: 1px 14px;
+  padding: 8px 0;
+  margin-right: 306px;
+  display: flex;
+}
+
+/* -------------------------------------------- FOOTER SECTION ----------------------------------------------------- */
