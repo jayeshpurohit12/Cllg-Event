@@ -3,8 +3,7 @@ import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 const Navbarr = () => {
   return (
     <>
-      <nav className="navbar navbar-expand-lg navbar-light bg-light navi">
-        <div className="container-fluid">
+      <nav className="navbar navbar-expand-lg navbar-dark bg-dark navi">
           <button
             className="navbar-toggler"
             type="button"
@@ -39,7 +38,7 @@ const Navbarr = () => {
                 </a>
               </li>
             </ul>
-            <form className="d-flex float-right">
+            <form className="d-flex float-right search-bar">
               <input
                 className="form-control me-2"
                 type="search"
@@ -51,7 +50,6 @@ const Navbarr = () => {
               </button>
             </form>
           </div>
-        </div>
       </nav>
     </>
   );

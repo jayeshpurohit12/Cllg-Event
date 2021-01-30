@@ -4,7 +4,7 @@ const UpcommEventList = () => {
   return (
     <>
       <div className="event-img-dist">
-        <div className="card" style={{ width: "18rem" }}>
+        <div className="card" style={{ width: "15rem"}}>
           <img
             className="card-img-top"
             src="http://placeimg.com/286/180/any"

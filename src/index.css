@@ -3,62 +3,277 @@
   margin: 0;
   box-sizing: border-box;
 }
-
+/*---------- App.jsx css---------------*/
 .main-head {
-  padding: 6%;
+ height:300px;
+  margin-top:0.5rem;
+  background-color: rgb(180, 187, 151);
+}
+.head-name{
+  display:flex;
+  justify-content: space-between;
+  width:80%;
+  margin:auto auto 0rem auto;
+  align-items: center;
+}
+.head-name a i{
+  background-color: white;
+  border-radius: 50%;
+  padding:1rem;
+  margin:0.5rem;
 }
 .full-header {
-  margin: -77px 117px;
-  box-shadow: 3px 5px 10px;
+  margin:-5rem auto auto auto;
+  box-shadow: 3px 4px 5px grey;
+  width:87%;
 }
-.list-head {
-  margin-left: -45px;
-  margin-right: 468px;
+/*---------------------------MainBody.jsx--------------------------------*/
+.mainBody{
+  display:flex;
+  justify-content: space-around;
+  flex-direction: row;
+}
+.events{
+  width:65%;
+}
+.categories{
+  width:25%;
+}
+.listHeaders{
+  padding:0.5rem;
+  margin:1rem 1rem;
+}
+.listheaders-head{
+   display:flex;
+   flex-direction:row;
+   justify-content: space-between;
+   align-items: center;
+}
+.listheaders-head h3{
+  font-size:150%;
+}
+/*-----------------------------Navbarr-----------------------------*/
+.search-bar{
+  margin-left:20rem;
+}
+.list-head{
+  padding:0.5rem;
+}
+.list-head a:hover{
+   background-color:grey;
+   color:white;
 }
 .list {
-  margin: 1px 12px;
-  padding: 0 4px;
+  margin: 0.5rem 1.4rem;
+  padding: 0 0.5rem;
 }
+.navi{
+  margin:1rem auto;
+  width:95%;
+}
+/*--------------------------Sliding banner--------------------------*/
 .slide-image {
   width: 97%;
-  margin: 16px 15px;
+  margin:1rem auto;
 }
-.upcom {
-  margin: 1px 14px;
-  padding: 8px 0;
-  margin-right: 306px;
-  display: flex;
+/*-------------------Category List------------------------------*/
+.Category-list{
+width:85%;
+margin:2rem 1rem;
+background-color:rgb(214, 212, 212);
+padding:0.5rem;
 }
-.event-heading {
-  margin-left: 65px;
+.Category-list a{
+  color:rgb(7, 7, 117);
+  text-decoration: none;
+  font-size:100%;
 }
-.arrow-btn {
-  display: flex;
-  float: right;
-  cursor: pointer;
-  margin-left: 417px;
-  margin-right: -259px;
-  margin-top: 10px;
+.category{
+  font-size:100%;
 }
+
+/*-----Upcomming-----------*/
 .eventCard {
   display: flex;
-  margin: 10px 13px;
+  margin: 0.6rem 0.813rem;
   flex-wrap: wrap;
-  margin-bottom: 33px;
+  margin-bottom: 2.06rem;
 }
+
 .event-btn {
-  margin: 16px 49px;
+  margin: 1rem 3.06rem;
+  width:40%;
+  font-size:100%;
 }
 .event-img-dist {
-  margin: 0 16px;
-  margin-right: 150px;
-  margin-bottom: 30px;
+  margin: 0 1rem;
+  margin-right: 9.37rem;
+  margin-bottom: 1.875rem;
 }
 .live {
-  margin: 1px 14px;
-  padding: 8px 0;
-  margin-right: 306px;
+  margin: 0.06rem 0.8rem;
+  padding: 0.5rem 0;
+  margin-right: 19.12rem;
   display: flex;
 }
 
+
 /* -------------------------------------------- FOOTER SECTION ----------------------------------------------------- */
+p {
+    font-family: 'Nunito', sans-serif;
+    font-size: 1rem;
+    color:white;
+    line-height: 2rem;
+}
+.dk-footer {
+  margin:2rem;
+  padding:3rem 4rem;
+  background-color: #151414;
+}
+
+.dk-footer-box-info{
+  margin:-6rem auto;
+  background: #363636;
+  padding: 2rem;
+}
+  .footer-social-link h3 {
+    color: #fff;
+    font-size: 2rem;
+    padding:1rem 0.5rem;
+ }
+  .footer-social-link ul {
+    width:50%;
+    list-style-type: none;
+    padding: 0;
+    margin: 0; 
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+  }
+  .dk-footer-box-info .footer-social-link a i {
+    width: 2rem;
+    padding:0.5rem;
+    height: 2rem;
+    border-radius: 50%;
+    color: #fff; 
+  }
+ .footer-social-link a i.fa-facebook {
+      background-color: #3B5998;
+ }
+    .dk-footer-box-info .footer-social-link a i.fa-twitter {
+      background-color: #55ACEE;
+ }
+    .dk-footer-box-info .footer-social-link a i.fa-instagram {
+      background-color: #B7242A; 
+}
+.contact-us {
+        margin-top:0rem;
+        padding-left:1.5rem; 
+      }
+.contact-info {
+          margin-left: 2rem;
+     }
+.contact-icon i {
+  position:relative;
+  margin-top:3rem;
+  margin-bottom:0rem;
+        color:#007bff;
+       }
+.Useful {
+  margin-left:4rem;
+  padding:2rem; 
+}
+.section-heading {
+  margin:1rem; 
+}
+
+.Useful h3 {
+  font-size:1.5rem;
+  color: #fff;
+ }
+
+.Useful ul {
+  width:100%;
+  border:red;
+  list-style: none;
+}
+
+.Useful li {
+  margin:1rem; 
+}
+.Useful a{
+  color: #dad8d8;
+}
+  .Useful a:hover {
+    color: #007bff; 
+  }
+  .contact-icon i {
+    font-size:2rem;
+    color: #007bff; }
+
+.contact-info{
+  margin:1rem;
+  color: #fff; 
+}
+  .contact-info h3 {
+    font-size: 1rem;
+    color: #fff;
+ }
+.contact-info p{
+  color:rgb(187, 186, 186);
+}
+.copyright{
+  padding:1rem;
+  margin:1rem;
+  color: #eeeeee;
+  background-color: #353535; 
+}
+.copyright a{
+  color: #eeeeee;
+  padding:1rem;
+}
+.copyright span{
+  margin-top:8rem;
+}
+  .copyright a:hover {
+    padding:1rem;
+    color:#007bff; 
+  }
+
+.copyright ul {
+  list-style: none;
+  display:flex;
+  margin:1rem 1rem 1rem 3rem;
+}
+
+
+/*-------------------------------------------- MEDIA QUERY -------------------------------------------------------*/
+@media screen and (max-width:1400px){
+  .copyright ul{
+    width:90%;
+    flex-direction: column;
+    align-items:center;
+  }
+  .copyright li{
+    padding:0.5rem;
+    margin:1rem;
+  }
+
+}
+@media screen and (max-width:1000px){
+.contact-us{
+  margin-top:10rem;
+}
+.mainBody{
+  flex-direction:column;
+}
+.categories{
+  width:100%;
+}
+.dk-footer-box-info{
+  margin:-5rem auto;
+}
+.events{
+  width:100%;
+}
+}
