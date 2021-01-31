@@ -5,11 +5,11 @@ import UpcommEventList from "./UpcommEventList";
 const Upcomming = () => {
   return (
     <>
-      <div className="bg-dark upcom" id="Upcomming">
-        <h3 className="text-white event-heading">UPCOMMING EVENT</h3>
-        <div className="arrow-btn">
-          <PlayCircleOutlineIcon />
-        </div>
+      <div className="bg-dark listHeaders" id="Upcomming">
+        <p className="listheaders-head">
+        <h3 className="text-white bg-dark event-heading">UPCOMMING EVENT</h3>
+        <PlayCircleOutlineIcon />
+        </p>
       </div>
       <div className="eventCard">
         <UpcommEventList />
