@@ -1,0 +1,23 @@
+
+.slide-image {
+    width: 100%;
+    margin:1rem auto;
+    padding:2.5rem;
+    padding-top:0rem;
+  }
+.slide-image img{
+  width:60%;
+  height:90%;
+}
+.live-tv{
+  color:red;
+  font-size:120%;
+  border-radius:25%;
+  padding:0.5rem 1rem;
+  float:right;
+}
+.banner-cover{
+  width:90%;
+  margin:auto;
+  
+}

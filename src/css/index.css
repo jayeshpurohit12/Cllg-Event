@@ -1,0 +1,66 @@
+@import "SliddingBanner.css";
+@import "App.css";
+@import "MainBody.css";
+@import "Footer.css";
+@import "Navbarr.css";
+@import "SliddingBanner.css";
+@import "CategoryList.css";
+@import "Live.css";
+
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/*-------------------------------------------- MEDIA QUERY -------------------------------------------------------*/
+@media screen and (max-width:1400px){
+  .copyright ul{
+    width:90%;
+    flex-direction: column;
+    align-items:center;
+  }
+  .copyright li{
+    padding:0.5rem;
+    margin:1rem;
+  }
+
+}
+@media screen and (max-width:1000px){
+.contact-us{
+  margin-top:10rem;
+}
+.headtitle{
+   font-size:1.5rem;
+   font-weight:600;
+}
+.facebook{
+  margin:auto;
+   width:50%;
+   height:5%;
+}
+.mainBody{
+  flex-direction:column;
+}
+.categories{
+  width:100%;
+}
+.dk-footer-box-info{
+  margin:-5rem auto;
+}
+.events{
+  width:100%;
+}
+}
+
+@media screen and (max-width:600px){
+  .headtitle{
+    font-size:1.3rem;
+    font-weight:600;
+ }
+ .head-name a i{
+  padding:0.5rem;
+  margin:0.2rem;
+}
+}

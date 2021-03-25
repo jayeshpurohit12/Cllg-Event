@@ -1,0 +1,19 @@
+.Category-list{
+    width:85%;
+    margin:2rem 1rem;
+    background-color:rgb(214, 212, 212);
+    padding:0.5rem;
+    }
+    .facebook{
+      margin:auto;
+       width:80%;
+       height:20%;
+    }
+    .Category-list a{
+      color:rgb(7, 7, 117);
+      text-decoration: none;
+      font-size:100%;
+    }
+    .category{
+      font-size:150%;
+    }

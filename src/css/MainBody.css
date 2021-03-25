@@ -1,0 +1,11 @@
+.mainBody{
+    display:flex;
+    justify-content: space-around;
+    flex-direction: row;
+  }
+  .events{
+    width:65%;
+  }
+  .categories{
+    width:25%;
+  }
