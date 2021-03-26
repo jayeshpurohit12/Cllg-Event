@@ -1,0 +1,30 @@
+
+
+.eventCard{
+  display: flex;
+  margin: 0.6rem 0.813rem;
+  flex-wrap: wrap;
+  margin-bottom: 2.06rem;
+}
+.listHeaders h3{
+  font-size:100%;
+}
+
+  .listHeaders{
+    padding:0.5rem;
+    margin:1rem 1rem;
+  }
+  .listheaders-head{
+     display:flex;
+     flex-direction:row;
+     justify-content: space-between;
+     align-items: center;
+  }
+  .listheaders-head h3{
+    font-size:150%;
+  }
+  .event-img-dist{
+    margin:1rem 1rem 1rem 2rem;
+    display:flex;
+    flex-direction:row;
+   }

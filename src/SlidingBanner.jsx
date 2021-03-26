@@ -1,32 +1,55 @@
 import React from "react";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+import {Carousel} from 'react-bootstrap';
+
 const SlidingBanner = () => {
   return (
     <>
-      <div id="demo" className="carousel slide" data-ride="carousel">
-        <ul className="carousel-indicators">
-          <li data-target="#demo" data-slide-to="0" className="active"></li>
-          <li data-target="#demo" data-slide-to="1"></li>
-          <li data-target="#demo" data-slide-to="2"></li>
-        </ul>
-        <div className="carousel-inner slide-image">
-          <div className="carousel-item active">
-            <img src="http://placeimg.com/1300/450/any" alt="Live" />
-          </div>
-          <div className="http://placeimg.com/1300/450/any">
-            <img src="chicago.jpg" alt="Live" />
-          </div>
-          <div className="http://placeimg.com/1300/450/any">
-            <img src="ny.jpg" alt="Live" />
-          </div>
-        </div>
-        <a className="carousel-control-prev" href="#demo" data-slide="prev">
-          <span className="carousel-control-prev-icon"></span>
-        </a>
-        <a className="carousel-control-next" href="#demo" data-slide="next">
-          <span className="carousel-control-next-icon"></span>
-        </a>
-      </div>
+  <div className="slide-image">
+  <Carousel>
+  <Carousel.Item>
+  <a className="live-tv" href="#Upcomm"> <i class="fas fa-stream">Live</i></a>
+    <img
+      className="d-block w-100"
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSu5RVwzc8LFlzQ3hbeeGM2JSLw47uwgWaAg&usqp=CAU"
+      alt="First slide"
+    />
+    
+    <Carousel.Caption>
+    
+      <h3>First slide label</h3>
+      <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+    </Carousel.Caption>
+  </Carousel.Item>
+  <Carousel.Item>
+  <a className="live-tv" href="#Upcomm"> <i class="fas fa-stream">Live</i></a>
+    <img
+      className="d-block w-100"
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSu5RVwzc8LFlzQ3hbeeGM2JSLw47uwgWaAg&usqp=CAU"
+      alt="Third slide"
+    />
+
+    <Carousel.Caption>
+      <h3>Second slide label</h3>
+      <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+    </Carousel.Caption>
+  </Carousel.Item>
+  <Carousel.Item>
+  <a className="live-tv" href="#Upcomm"> <i class="fas fa-stream">Live</i></a>
+    <img
+      className="d-block w-100"
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSu5RVwzc8LFlzQ3hbeeGM2JSLw47uwgWaAg&usqp=CAU"
+      alt="Third slide"
+    />
+
+    <Carousel.Caption>
+      <h3>Third slide label</h3>
+      <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+    </Carousel.Caption>
+  </Carousel.Item>
+</Carousel>
+
+</div>    
     </>
   );
 };
