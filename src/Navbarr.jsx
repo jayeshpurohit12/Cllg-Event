@@ -14,16 +14,16 @@ const Navbarr = () => {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto">
-            <Nav.Link href="#home" style={{ color: "rgb(206, 206, 206)" }}>
+            <Nav.Link href="/" style={{ color: "rgb(206, 206, 206)" }}>
               Home
             </Nav.Link>
-            <Nav.Link href="#link" style={{ color: "rgb(206, 206, 206)" }}>
+            <Nav.Link href="#Upcomming" style={{ color: "rgb(206, 206, 206)" }}>
               Upcomming
             </Nav.Link>
-            <Nav.Link href="#link" style={{ color: "rgb(206, 206, 206)" }}>
+            <Nav.Link href="#Live" style={{ color: "rgb(206, 206, 206)" }}>
               Live
             </Nav.Link>
-            <Nav.Link href="#link" style={{ color: "rgb(206, 206, 206)" }}>
+            <Nav.Link href="#Previous" style={{ color: "rgb(206, 206, 206)" }}>
               Previous
             </Nav.Link>
           </Nav>
