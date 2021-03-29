@@ -1,28 +1,4 @@
-.main-head {
-    height:300px;
-     margin-top:0.5rem;
-     background-color: rgb(180, 187, 151);
-   }
-   .head-name{
-     display:flex;
-     justify-content: space-between;
-     width:80%;
-     margin:auto auto 0rem auto;
-     align-items: center;
-   }
-   .headtitle{
-    font-family: "Dancing Script";
-    font-size:2rem;
-    font-weight:600;
-   }
-   .head-name a i{
-     background-color: white;
-     border-radius: 50%;
-     padding:1rem;
-     margin:0.5rem;
-   }
-   .full-header {
-     margin:-5rem auto auto auto;
-     box-shadow: 3px 4px 5px grey;
-     width:80%;
-   }
+*{
+    margin:0;
+    padding:0;
+}
