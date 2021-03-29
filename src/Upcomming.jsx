@@ -6,7 +6,7 @@ const Upcomming = () => {
     <>
       <div className="bg-dark listHeaders" id="Upcomming">
         <p className="listheaders-head">
-        <h3 className="text-white bg-dark event-heading">UPCOMMING EVENT</h3>
+          <h3 className="text-white bg-dark event-heading">UPCOMMING EVENT</h3>
         </p>
       </div>
       <div className="eventCard">

@@ -21,18 +21,18 @@ const Categories = () => {
         </p>
       </div>
       <div className="facebook">
-      <div
-        className="card"
-        style={{ width: "90%", margin: "1rem 1rem 1rem 1rem" }}
-      >
-        <img className="card-img-top" src="./images/appName.png" alt="Card" />
-        <div className="card-body">
-          <p className="card-text">
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
-          </p>
+        <div
+          className="card"
+          style={{ width: "90%", margin: "1rem 1rem 1rem 1rem" }}
+        >
+          <img className="card-img-top" src="./images/appName.png" alt="Card" />
+          <div className="card-body">
+            <p className="card-text">
+              Some quick example text to build on the card title and make up the
+              bulk of the card's content.
+            </p>
+          </div>
         </div>
-      </div>
       </div>
     </>
   );
