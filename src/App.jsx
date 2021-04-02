@@ -9,10 +9,10 @@ const App=()=>{
     <div className="app">
       <Switch>
         <Route path="/create">
-          <Create/>
+        <Create/>
         </Route>
         <Route path="/">
-         <Mainpg/>
+        <Mainpg/>
         </Route>
       </Switch>
       </div>

@@ -11,6 +11,9 @@ var config=({
   measurementId: "G-40LP0E0MCV"
   });
 var app=firebase.initializeApp(config);
+const dbs= firebase.firestore(app);
+const storage = firebase.storage();
 export default app;
 export const auth=firebase.auth();
 export const provider=new firebase.auth.GoogleAuthProvider();
+export{dbs,storage};

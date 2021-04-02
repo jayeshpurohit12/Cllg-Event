@@ -1,7 +1,19 @@
-import React from "react";
+import React,{useState,useEffect} from "react";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import UpcommEventList from "./UpcommEventList";
+import {dbs} from './firebase.js';
+
 const Upcomming = () => {
+  const [Posts,setPosts]=useState([]);
+  // runs a piece of code on a specific condition
+   useEffect(()=>{
+     dbs.collection('Posts').onSnapshot(snapshot=>{
+       setPosts(snapshot.docs.map(doc=>({
+         id:doc.id,
+         Posts:doc.data()
+       })));
+     })
+     },[]);
   return (
     <>
       <div className="bg-dark listHeaders" id="Upcomming">
@@ -10,10 +22,10 @@ const Upcomming = () => {
         </p>
       </div>
       <div className="eventCard">
-        <UpcommEventList />
-        <UpcommEventList />
-        <UpcommEventList />
-        <UpcommEventList />
+      {   Posts.map(({id,Posts})=>{
+              return (<UpcommEventList key={id} title={Posts.Name} description={Posts.description} Url={Posts.ImageUrl} date={Posts.date} time={Posts.time}/>)
+         })
+         }
       </div>
     </>
   );
