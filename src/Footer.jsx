@@ -4,7 +4,6 @@ import "./Footer";
 const Footer = () => {
   return (
     <>
-<<<<<<< HEAD
       <footer className="footer">
         <div className="footer-left col-md-4 col-sm-6">
           <p className="About">
@@ -59,10 +58,6 @@ const Footer = () => {
           </p>
           <p className="tag">Company Name © 2021</p>
         </div>
-=======
-      <footer>
-        <h1>footer</h1>
->>>>>>> dc3f85a055f7fd9cb2c590c4fd2ce48d15e45e89
       </footer>
     </>
   );
