@@ -1,27 +1,46 @@
 import React from "react";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
-import { Card, Button } from "react-bootstrap";
-const UpcommEventList = () => {
-  return (
-    <>
-      <div className="event-img-dist">
-        <Card style={{ width: "15rem" }}>
-          <Card.Img
-            variant="top"
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSu5RVwzc8LFlzQ3hbeeGM2JSLw47uwgWaAg&usqp=CAU"
-          />
-          <Card.Body>
-            <Card.Title>Card Title</Card.Title>
-            <Card.Text style={{ color: "black" }}>
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </Card.Text>
-            <Button variant="primary">Go somewhere</Button>
-          </Card.Body>
-        </Card>
-      </div>
-    </>
-  );
+import { Card} from "react-bootstrap";
+const UpcommEventList = (props) => {
+  var d=new Date();
+   if(((parseInt(props.date.substring(0,2))>d.getDate())&&(parseInt(props.date.substring(3,5))>d.getMonth()))||(parseInt(props.date.substring(6,10))>d.getFullYear())){
+    return (
+      <>
+      
+        <div className="event-img-dist">
+          <Card style={{ width: "15rem" }}>
+            <Card.Img
+              variant="top"
+              src={props.Url}
+            />
+            <Card.Body>
+              <Card.Title>{props.title}</Card.Title>
+              <Card.Text style={{ color: "black",display:'flex'}}>
+              <div style={{marginRight:'1rem'}}>
+                {props.time}
+                </div>
+                <div>
+                {props.date}
+                </div>
+              </Card.Text>
+              <Card.Text>
+                {props.description}
+              </Card.Text>
+            </Card.Body>
+          </Card>
+        </div>
+      </>
+    );
+   }
+   else{
+     return(
+       <div>Hello</div>
+     );
+   }
+   
+    
+
+  
 };
 
 export default UpcommEventList;

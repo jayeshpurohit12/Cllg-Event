@@ -49,16 +49,21 @@ const Footer = () => {
         </div>
         <div className="footer-right col-md-4 col-sm-6">
           <h2>
-            company
-            <span> logo</span>
+            Eventive
+            <img
+          src="./images/Name.png"
+          style={{ width: "50%", height: "80%", backgroundColor:"transparent" }}
+          alt="logo"
+        />
           </h2>
           <p className="menu">
-            <a href="/">Home </a> | <a href="# "> About </a> |{" "}
-            <a href="# ">Services</a> | <a href="# ">Contact</a>
+            <a href="/">Home</a> | <a href="# ">About</a> |{" "}
+            <a href="# ">Contact</a> | <a href="# ">Upcomming</a>
+            <a href="# ">Previous</a> | <a href="# ">Live</a>
           </p>
-          <p className="tag">Company Name © 2021</p>
+          <p className="tag">Copyright © 2021</p>
         </div>
-      </footer>
+        </footer>
     </>
   );
 };
