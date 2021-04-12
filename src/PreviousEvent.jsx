@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import { Card, Button } from "react-bootstrap";
 import { makeStyles } from "@material-ui/core/styles";
 import Modal from "@material-ui/core/Modal";
@@ -25,17 +26,16 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(2, 4, 3),
   },
 }));
-
-const UpcommEventList = (props) => {
+const PreviousEvent = (props) => {
   const classes = useStyles();
   const [open, setOpen] = useState(false);
   const [modalStyle] = useState(getModalStyle);
   var d = new Date();
   if (
-    parseInt(props.date.substring(3, 5)) >= d.getMonth() + 1 &&
-    parseInt(props.date.substring(6, 10)) >= d.getFullYear()
+    parseInt(props.date.substring(3, 5)) <= d.getMonth() + 1 &&
+    parseInt(props.date.substring(6, 10)) <= d.getFullYear()
   ) {
-    if (parseInt(props.date.substring(3, 5)) > d.getMonth() + 1) {
+    if (parseInt(props.date.substring(3, 5)) < d.getMonth() + 1) {
       return (
         <>
           <div className="event-img-dist">
@@ -89,7 +89,7 @@ const UpcommEventList = (props) => {
           </Modal>
         </>
       );
-    } else if (parseInt(props.date.substring(0, 2)) > d.getDate()) {
+    } else if (parseInt(props.date.substring(0, 2)) < d.getDate()) {
       return (
         <>
           <div className="event-img-dist">
@@ -114,6 +114,7 @@ const UpcommEventList = (props) => {
               </Card.Body>
             </Card>
           </div>
+
           <Modal open={open} onClose={() => setOpen(false)}>
             <div style={modalStyle} className={classes.paper}>
               <h4>
@@ -149,5 +150,4 @@ const UpcommEventList = (props) => {
     return <div className="not_found_call">Currently ! No Event FOUND</div>;
   }
 };
-
-export default UpcommEventList;
+export default PreviousEvent;

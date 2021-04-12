@@ -1,11 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import LiveEventList from "./LiveEventList";
 import { dbs } from "./firebase.js";
 
-const Live = () => {
+const Live_page = () => {
   const [Posts, setPosts] = useState([]);
-  // runs a piece of code on a specific condition
   useEffect(() => {
     dbs.collection("Posts").onSnapshot((snapshot) => {
       setPosts(
@@ -18,7 +17,7 @@ const Live = () => {
   }, []);
   return (
     <>
-      <div className="bg-dark listHeaders" id="Upcomming">
+      <div className="bg-dark listHeaders">
         <p className="listheaders-head">
           <h3 className="text-white bg-dark event-heading">LIVE EVENT</h3>
         </p>
@@ -43,4 +42,4 @@ const Live = () => {
   );
 };
 
-export default Live;
+export default Live_page;

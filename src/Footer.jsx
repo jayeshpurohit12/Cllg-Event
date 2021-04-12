@@ -1,6 +1,7 @@
 import React from "react";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "./Footer";
+
 const Footer = () => {
   return (
     <>
@@ -51,19 +52,23 @@ const Footer = () => {
           <h2>
             Eventive
             <img
-          src="./images/Name.png"
-          style={{ width: "50%", height: "80%", backgroundColor:"transparent" }}
-          alt="logo"
-        />
+              src="./images/Name.png"
+              style={{
+                width: "50%",
+                height: "80%",
+                backgroundColor: "transparent",
+              }}
+              alt="logo"
+            />
           </h2>
           <p className="menu">
-            <a href="/">Home</a> | <a href="# ">About</a> |{" "}
-            <a href="# ">Contact</a> | <a href="# ">Upcomming</a>
-            <a href="# ">Previous</a> | <a href="# ">Live</a>
+            <a href="/">Home</a> | <a href=" ">About</a> |{" "}
+            <a href="/Contact ">Contact</a> | <a href="/Upcomming">Upcomming</a>
+            <a href="/Previous ">Previous</a> | <a href="/Live">Live</a>
           </p>
           <p className="tag">Copyright © 2021</p>
         </div>
-        </footer>
+      </footer>
     </>
   );
 };

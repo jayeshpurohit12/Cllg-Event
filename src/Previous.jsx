@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
-import LiveEventList from "./LiveEventList";
 import { dbs } from "./firebase.js";
+import PreviousEvent from "./PreviousEvent";
 
-const Live = () => {
+const Previous = () => {
   const [Posts, setPosts] = useState([]);
   // runs a piece of code on a specific condition
   useEffect(() => {
@@ -20,13 +20,13 @@ const Live = () => {
     <>
       <div className="bg-dark listHeaders" id="Upcomming">
         <p className="listheaders-head">
-          <h3 className="text-white bg-dark event-heading">LIVE EVENT</h3>
+          <h3 className="text-white bg-dark event-heading">PREVIOUS EVENT</h3>
         </p>
       </div>
       <div className="eventCard">
         {Posts.map(({ id, Posts }) => {
           return (
-            <LiveEventList
+            <PreviousEvent
               key={id}
               title={Posts.Name}
               description={Posts.description}
@@ -43,4 +43,4 @@ const Live = () => {
   );
 };
 
-export default Live;
+export default Previous;

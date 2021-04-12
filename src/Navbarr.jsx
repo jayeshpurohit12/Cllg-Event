@@ -1,6 +1,7 @@
 import React from "react";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import { Navbar, Nav, Form, FormControl, Button } from "react-bootstrap";
+import { NavLink } from "react-router-dom";
 const Navbarr = () => {
   return (
     <>
@@ -17,15 +18,21 @@ const Navbarr = () => {
             <Nav.Link href="/" style={{ color: "rgb(206, 206, 206)" }}>
               Home
             </Nav.Link>
-            <Nav.Link href="#Upcomming" style={{ color: "rgb(206, 206, 206)" }}>
-              Upcomming
-            </Nav.Link>
-            <Nav.Link href="#Live" style={{ color: "rgb(206, 206, 206)" }}>
-              Live
-            </Nav.Link>
-            <Nav.Link href="#Previous" style={{ color: "rgb(206, 206, 206)" }}>
-              Previous
-            </Nav.Link>
+            <NavLink to="/Upcomming" style={{ textDecoration: "none" }}>
+              <Nav.Link href=" " style={{ color: "rgb(206, 206, 206)" }}>
+                Upcomming
+              </Nav.Link>
+            </NavLink>
+            <NavLink to="/Live" style={{ textDecoration: "none" }}>
+              <Nav.Link href=" " style={{ color: "rgb(206, 206, 206)" }}>
+                Live
+              </Nav.Link>
+            </NavLink>
+            <NavLink to="/Previous" style={{ textDecoration: "none" }}>
+              <Nav.Link href=" " style={{ color: "rgb(206, 206, 206)" }}>
+                Previous
+              </Nav.Link>
+            </NavLink>
           </Nav>
           <Form inline>
             <FormControl type="text" placeholder="Search" className="mr-sm-2" />
