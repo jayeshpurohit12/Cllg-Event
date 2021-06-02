@@ -15,18 +15,6 @@
 }
 
 /*-------------------------------------------- MEDIA QUERY -------------------------------------------------------*/
-@media screen and (max-width:1400px){
-  .copyright ul{
-    width:90%;
-    flex-direction: column;
-    align-items:center;
-  }
-  .copyright li{
-    padding:0.5rem;
-    margin:1rem;
-  }
-
-}
 @media screen and (max-width:1000px){
 .contact-us{
   margin-top:10rem;
@@ -58,6 +46,9 @@
   .headtitle{
     font-size:1.3rem;
     font-weight:600;
+ }
+ #create-form{
+   width:90%;
  }
  .head-name a i{
   padding:0.5rem;

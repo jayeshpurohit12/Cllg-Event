@@ -6,7 +6,7 @@ const Upcom = () => {
   const [Posts, setPosts] = useState([]);
   // runs a piece of code on a specific condition
   useEffect(() => {
-    dbs.collection("Posts").onSnapshot((snapshot) => {
+    dbs.collection("UpcommingPosts").onSnapshot((snapshot) => {
       setPosts(
         snapshot.docs.map((doc) => ({
           id: doc.id,
@@ -36,7 +36,9 @@ const Upcom = () => {
               Venue={Posts.Venue}
             />
           );
-        })}
+        }
+        )
+        }
       </div>
     </>
   );

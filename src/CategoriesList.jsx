@@ -4,7 +4,7 @@ const CategoriesList = (props) => {
   return (
     <>
       <div className="Category-list">
-        <a href="#link">{props.name}</a>
+        <a href="#Link">{props.name}</a>
       </div>
     </>
   );

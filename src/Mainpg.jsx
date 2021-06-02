@@ -1,26 +1,13 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import React from "react";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "./css/Mainpg.css";
 import Navbarr from "./Navbarr";
-import { Button } from "@material-ui/core";
 import SlidingBanner from "./SlidingBanner";
 import MainBody from "./MainBody";
 import Footer from "./Footer";
-import { auth, provider } from "./firebase";
 
 const Mainpg = () => {
-  const [user, setUser] = useState(null);
-
-  useEffect(() => {
-    auth.onAuthStateChanged((authUser) => {
-      if (authUser) {
-        setUser(authUser);
-      } else {
-        setUser(null);
-      }
-    });
-  }, []);
+ 
   return (
     <>
       <div className="main-head">
@@ -32,7 +19,6 @@ const Mainpg = () => {
         <div className="head-name">
           <span className="headtitle">EVENTIVE</span>
           <div>
-            {user === null ? (
               <div>
                 <a href="#facebook">
                   <i className="fa fa-facebook"></i>
@@ -40,46 +26,7 @@ const Mainpg = () => {
                 <a href="#twitter">
                   <i className="fa fa-twitter"></i>
                 </a>
-                <Button
-                  variant="contained"
-                  color="primary"
-                  href="#contained-buttons"
-                  onClick={() => {
-                    auth
-                      .signInWithPopup(provider)
-                      .then(function (result) {
-                        setUser(result.user);
-                      })
-                      .catch(function (err) {
-                        console.log(err);
-                      });
-                  }}
-                >
-                  Login
-                </Button>
-              </div>
-            ) : (
-              <div>
-                <Button
-                  variant="contained"
-                  color="primary"
-                  href="#contained-buttons"
-                  style={{ margin: "0rem 0.5rem" }}
-                  onClick={() => {
-                    auth.signOut().then(() => {
-                      setUser(null);
-                    });
-                  }}
-                >
-                  Signout
-                </Button>
-                <Link to="/Create">
-                  <Button className="user" variant="contained" color="primary">
-                    Createevent
-                  </Button>
-                </Link>
-              </div>
-            )}
+                </div>
           </div>
         </div>
       </div>

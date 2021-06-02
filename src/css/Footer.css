@@ -4,41 +4,41 @@
   text-align: left;
   font-family: sans-serif;
   font-weight: bold;
-  font-size: 16px;
-  padding: 50px;
-  margin-top: 50px;
+  font-size: 1rem;
+  padding: 3.125rem;
+  margin-top: 3.15rem;
 }
 .footer .footer-left {
   width: 33%;
-  padding-right: 15px;
+  padding: 0rem 0.3rem 0.3rem 0.3rem;
   display: inline-block;
 }
 .footer .About {
-  line-height: 20px;
+  line-height: 1.25;
   color: #ffffff;
-  font-size: 13px;
+  font-size: 0.8125rem;
   font-weight: normal;
   margin: 0;
 }
-.footer .footer-left span {
-  padding: 2px 0;
+.footer .footer-left span{
+  padding:0.2rem 0;
 }
 .footer .footer_icons {
-  margin-top: 25px;
+  margin-top: 1.56rem;
 }
 .footer .footer_icons a {
   display: inline-block;
-  width: 35px;
-  height: 35px;
+  width: 2.18rem;
+  height: 2.18rem;
   cursor: pointer;
   background-color: #33383b;
   border-radius: 2px;
-  font-size: 20px;
+  font-size: 1.25rem;
   color: #ffffff;
   text-align: center;
-  line-height: 35px;
-  margin-right: 3px;
-  margin-bottom: 5px;
+  line-height: 2rem;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
 }
 .fa {
   display: inline-block;
@@ -50,18 +50,19 @@
 .footer .footer-center {
   width: 30%;
   display: inline-block;
-  /* top: -5rem; */
+  padding: 0rem 0.3rem 0.3rem 0.3rem;
+  top: -0.2rem;
 }
 .footer .footer-center i {
   background-color: #33383b;
   color: #ffffff;
-  font-size: 25px;
-  width: 38px;
-  height: 38px;
+  font-size: 1.5rem;
+  width: 2rem;
+  height: 2rem;
   border-radius: 50%;
   text-align: center;
-  line-height: 42px;
-  margin: 10px 15px;
+  line-height: 2rem;
+  margin: 0.62rem 0.93rem;
   vertical-align: middle;
 }
 div {
@@ -76,7 +77,7 @@ div {
 .footer .footer-center p span {
   display: block;
   font-weight: normal;
-  font-size: 14px;
+  font-size: 0.92rem;
   line-height: 2;
 }
 .footer .footer-center p a {
@@ -85,12 +86,13 @@ div {
 }
 .footer .footer-right {
   width: 35%;
+  padding: 0rem 0.3rem 0.3rem 0.3rem;
   /* top: -7rem; */
   display: inline-block;
 }
 .footer h2 {
   color: #ffffff;
-  font-size: 36px;
+  font-size: 2rem;
   font-weight: normal;
   margin: 0;
 }
@@ -100,7 +102,7 @@ div {
 }
 .footer .menu {
   color: #ffffff;
-  margin: 20px 0 12px;
+  margin: 1.25rem 0 1rem;
   padding: 0;
 }
 .footer .menu a {
@@ -111,7 +113,36 @@ div {
 }
 .footer .tag {
   color: #0099ff;
-  font-size: 14px;
+  font-size: 1rem;
   font-weight: normal;
   margin: 0;
+}
+
+/*----------------------media query----------------------------*/
+@media screen and (max-width:1200px){
+  .footer .footer-center{
+    width:50%;
+    padding-left:2rem;
+  }
+  .footer .About {
+   display:inline-block;
+  }
+  .footer .footer-left span{
+    display:inline-block;
+  }
+  
+  .footer .footer-left {
+    width:50%;
+    margin:2rem;
+  }
+  .footer .footer-right {
+   margin:1rem;
+    display: block;
+  }
+  .footer .menu a {
+    display: inline-block;
+    line-height: 1.8;
+    text-decoration: none;
+    color: inherit;
+  }
 }

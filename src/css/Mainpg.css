@@ -1,7 +1,8 @@
 .main-head {
   height: 300px;
   margin-top: 0.5rem;
-  background-color: rgb(180, 187, 151);
+
+  background-color:rgb(197, 204, 164);
 }
 .head-name {
   display: flex;

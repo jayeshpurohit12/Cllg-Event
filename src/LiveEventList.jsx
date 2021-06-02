@@ -30,24 +30,20 @@ const LiveEventList = (props) => {
   const classes = useStyles();
   const [open, setOpen] = useState(false);
   const [modalStyle] = useState(getModalStyle);
-  const d = new Date();
-  if (
-    parseInt(props.date.substring(0, 2)) === d.getDate() &&
-    parseInt(props.date.substring(3, 5)) === d.getMonth() + 1 &&
-    parseInt(props.date.substring(6, 10)) === d.getFullYear()
-  ) {
+ 
     return (
       <>
         <div className="event-img-dist">
-          <Card style={{ width: "15rem" }}>
+          <Card border="info" style={{ width: "15rem" ,boxShadow:"2px 3px 4px grey"}}>
             <Card.Img variant="top" src={props.Url} />
             <Card.Body>
-              <Card.Title>{props.title}</Card.Title>
-              <Card.Text style={{ color: "black", display: "flex" }}>
-                <div style={{ marginRight: "1rem" }}>{props.time}</div>
-                <div>{props.date}</div>
-              </Card.Text>
-              <Card.Text>{props.description}</Card.Text>
+              <Card.Title><h2>{props.title}</h2></Card.Title>
+              <Card.Subtitle className="mb-2 text-muted" style={{ color: "black", display: "flex" }}>
+                <div style={{ marginRight: "0.5rem", padding:"0.5rem" }}>{props.time}</div>
+                <div style={{ marginLeft: "0.5rem",padding:"0.5rem" }}>{props.date}</div>
+              </Card.Subtitle>
+              <Card.Text><strong>Description: </strong>
+              <p>{props.description}</p></Card.Text>
               <center>
                 <Button
                   variant="primary"
@@ -89,9 +85,6 @@ const LiveEventList = (props) => {
         </Modal>
       </>
     );
-  } else {
-    return <div className="not_found_call">Currently ! No Event FOUND</div>;
-  }
 };
 
 export default LiveEventList;

@@ -6,7 +6,7 @@ import { dbs } from "./firebase.js";
 const Live_page = () => {
   const [Posts, setPosts] = useState([]);
   useEffect(() => {
-    dbs.collection("Posts").onSnapshot((snapshot) => {
+    dbs.collection("LivePosts").onSnapshot((snapshot) => {
       setPosts(
         snapshot.docs.map((doc) => ({
           id: doc.id,

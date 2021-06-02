@@ -8,10 +8,9 @@ const Footer = () => {
       <footer className="footer">
         <div className="footer-left col-md-4 col-sm-6">
           <p className="About">
-            <span>About the company</span>
+            <h2 style={{color:"white",padding:"0.5rem"}}>Event Site</h2>
             <p>
-              Ut congue augue non tellus bibendum, in varius tellus condimentum.
-              In scelerisque nibh tortor, sed rhoncus odio condimentum in.
+              This site is a single source to view (live, past, upcomming events)/post (upcomming events).
             </p>
           </p>
           <div className="footer_icons">
@@ -34,7 +33,7 @@ const Footer = () => {
             <i className="fa fa-map-marker"></i>
             <p>
               <span>Street name and number </span>
-              City, Country
+              Indore,India
             </p>
           </div>
           <div>
@@ -44,7 +43,7 @@ const Footer = () => {
           <div>
             <i className="fa fa-envelope"></i>
             <p>
-              <a href="# ">office@gmail.com</a>
+              <a href="# ">@acropolis.in</a>
             </p>
           </div>
         </div>
