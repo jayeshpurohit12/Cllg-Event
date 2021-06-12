@@ -1,6 +1,8 @@
 import React from "react";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import CategoriesList from "./CategoriesList";
+import { Button } from "react-bootstrap";
+
 const Categories = () => {
   return (
     <>
@@ -10,10 +12,16 @@ const Categories = () => {
         </p>
       </div>
       <div>
+        {/* Test code  */}
+        
+        <CategoriesList name="tech" />
+            
         <CategoriesList name="sport" />
         <CategoriesList name="art" />
-        <CategoriesList name="tech" />
+        
         <CategoriesList name="webinar" />
+
+        {/* Test code  */}
       </div>
       <div className="bg-dark listHeaders" id="Upcomming">
         <p className="listheaders-head">
@@ -23,14 +31,30 @@ const Categories = () => {
       <div className="facebook">
         <div
           className="card"
-          style={{ width: "90%", margin: "1rem 1rem 1rem 1rem" }}
+          style={{ width: "100.5%", margin: "1rem 1rem 1rem 0rem" }}
         >
-          <img className="card-img-top" src="./images/appName.png" alt="Card" />
+          <img
+            className="card-img-top"
+            src="https://www.careeraddict.com/uploads/article/55582/man-writing-code-computer.jpg"
+            alt="Card"
+          />
           <div className="card-body">
             <p className="card-text">
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
+              <center>
+                Website and software application designing, building, or
+                maintaining.
+              </center>
             </p>
+            <center>
+              <Button
+                variant="primary"
+                className="event_btn"
+                target="_blank"
+                href="https://www.facebook.com/Jayeshpurohit01"
+              >
+                Visit
+              </Button>
+            </center>
           </div>
         </div>
       </div>

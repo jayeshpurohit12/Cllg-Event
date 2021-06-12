@@ -20,10 +20,10 @@ const Mainpg = () => {
           <span className="headtitle">EVENTIVE</span>
           <div>
               <div>
-                <a href="#facebook">
+                <a target="_blank" href="https://www.facebook.com/Jayeshpurohit01">
                   <i className="fa fa-facebook"></i>
                 </a>
-                <a href="#twitter">
+                <a target="_blank" href="https://twitter.com/tech_jayesh">
                   <i className="fa fa-twitter"></i>
                 </a>
                 </div>

@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom";
 import { IconButton } from "@material-ui/core";
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
-import { Form, Button } from "react-bootstrap";
+import { Form, Button} from "react-bootstrap";
 import { dbs, storage } from "./firebase.js";
 
 const Create = () => {
@@ -15,6 +15,7 @@ const Create = () => {
   const [time, setTime] = useState("");
   const [des, setDes] = useState("");
   const [cat, setCat] = useState("");
+  const [progress,setprogress]=useState(0);
   // handle change function to set image file
   const handleChange = (e) => {
     if (e.target.files[0]) {
@@ -22,19 +23,24 @@ const Create = () => {
     }
   };
   var d = new Date();
-  // upload to add data in the database
-  const upload = (e) => {
-    e.preventDefault();
-    const uploadimg = storage.ref(`images/${image.name}`).put(image);
-    const storageRef = storage.ref(`images/${image.name}`);
+  const handleUpload=()=>{
+   const uploadTask=storage.ref(`images/${image.name}`).put(image);
+   uploadTask.on("state_changed",(snapshot)=>{
+     const progress=Math.round(
+     (snapshot.bytesTransferred/snapshot.totalBytes)*100);
+     setprogress(progress);
+  },
+  (error)=>{
+    console.log(error);
+    alert(error.message);
+  },()=>{
+    //const storageRef = storage.ref(`images/${image.name}`);
     if (
       parseInt(date.substring(3, 5)) >= d.getMonth() + 1 &&
       parseInt(date.substring(6, 10)) >= d.getFullYear()
     ) {       
       if ((parseInt(date.substring(3, 5)) > d.getMonth() + 1)||(parseInt(date.substring(0, 2)) > d.getDate())){
-    uploadimg.on("state_changed", () => {
-      storage
-        .ref("images")
+      storage.ref("images")
         .child("/"+image.name)
         .getDownloadURL().then((url) => {
         dbs
@@ -49,14 +55,7 @@ const Create = () => {
             Category: cat,
             description: des,
           })
-          .then(() => {
-            alert("Event Created");
-          })
-          .catch((error) => {
-            alert(error.message);
-          });
-      });
-      /// resetting time date venue title etc to ""
+          setprogress(0);
       setTime("");
       setDate("");
       setVenue("");
@@ -67,12 +66,11 @@ const Create = () => {
     });
   }
 }
-else if (
+if (
   parseInt(date.substring(0, 2)) === d.getDate() &&
   parseInt(date.substring(3, 5)) === d.getMonth() + 1 &&
   parseInt(date.substring(6, 10)) === d.getFullYear()
 ) {   
-  uploadimg.on("state_changed", () => {
     storage
       .ref("images")
       .child("/"+image.name)
@@ -89,25 +87,17 @@ else if (
           Category: cat,
           description: des,
         })
-        .then(() => {
-          alert("Event Created");
-        })
-        .catch((error) => {
-          alert(error.message);
-        });
-    });
-    /// resetting time date venue title etc to ""
-    setTime("");
-    setDate("");
-    setVenue("");
-    setTitle("");
-    setImage(null);
-    setDes("");
-    setCat("");
+        setprogress(0);
+      setTime("");
+      setDate("");
+      setVenue("");
+      setTitle("");
+      setImage(null);
+      setDes("");
+      setCat("");
   });
 }
 else{
-  uploadimg.on("state_changed", () => {
     storage
       .ref("images")
       .child("/"+image.name)
@@ -124,25 +114,20 @@ else{
           Category: cat,
           description: des,
         })
-        .then(() => {
-          alert("Event Created");
-        })
-        .catch((error) => {
-          alert(error.message);
-        });
-    });
-    /// resetting time date venue title etc to ""
-    setTime("");
-    setDate("");
-    setVenue("");
-    setTitle("");
-    setImage(null);
-    setDes("");
-    setCat("");
+        setprogress(0);
+      setTime("");
+      setDate("");
+      setVenue("");
+      setTitle("");
+      setImage(null);
+      setDes("");
+      setCat("");
   });
 }
+})
   };
   return (
+    <>
     <div className="Create" style={{ backgroundColor: "#ffe387" }}>
       <IconButton
         onClick={() => {
@@ -161,7 +146,6 @@ else{
           backgroundColor: "white",
           boxShadow: "1px 3px 5px ",
         }}
-        onSubmit={upload}
       >
         <Form.Group controlId="exampleForm.ControlInput1">
           <center>
@@ -289,12 +273,16 @@ else{
               marginTop: "1rem",
               padding: "0.5rem",
             }}
-            onChange={handleChange}
+            onChange={ handleChange}
           />
         </Form.Group>
-        <Button type="submit">Submit</Button>
+        <progress value={progress} max="100"/>
+        <p>Progress : {progress} %</p>
+        <br></br>
+        <Button onClick={handleUpload}>Submit</Button>
       </Form>
     </div>
+  </>
   );
 };
 export default Create;

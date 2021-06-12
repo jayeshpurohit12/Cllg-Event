@@ -28,6 +28,12 @@
    width:50%;
    height:5%;
 }
+.eventCard{
+  display:flex;
+  margin-left: 15px;
+  margin-right: -15px;
+  
+}
 .mainBody{
   flex-direction:column;
 }

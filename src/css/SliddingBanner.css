@@ -1,23 +1,34 @@
-
 .slide-image {
-    width: 100%;
-    margin:1rem auto;
-    padding:2.5rem;
-    padding-top:0rem;
-  }
-.slide-image img{
-  width:60%;
-  height:90%;
+  width: 94%;
+  padding:2rem;
+  margin:auto;
+  padding-top:0rem;
 }
+.slide-image img{
+  margin:auto;
+  padding:auto;
+  width:95rem;
+  height:30rem;
+}
+
 .live-tv{
-  color:red;
-  font-size:120%;
-  border-radius:25%;
-  padding:0.5rem 1rem;
-  float:right;
+color:red;
+font-size:100%;
+border-radius:25%;
+padding:0.5rem 1rem;
+float:right;
 }
 .banner-cover{
-  width:90%;
-  margin:auto;
-  
+width:90%;
+margin:auto;
+
+}
+@media screen and (max-width:1000px){
+.slide-image{
+  width:100%;
+}
+.slide-image img{
+  width: 44rem;
+  height:15rem;
+}
 }

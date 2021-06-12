@@ -32,16 +32,18 @@ const PreviousEvent = (props) => {
   const [modalStyle] = useState(getModalStyle);
       return (
         <>
-          <div className="event-img-dist">
+          <div className="event-img-dist" style={{alignItems: "center"}}>
             <Card style={{ width: "15rem" }}>
-              <Card.Img variant="top" src={props.Url} />
+              <Card.Img variant="top" style={{height : "10.3rem"}} src={props.Url} />
               <Card.Body>
-                <Card.Title>{props.title}</Card.Title>
+                <Card.Title style={{fontSize:"1.5rem"}}>{props.title}</Card.Title>
                 <Card.Text style={{ color: "black", display: "flex" }}>
                   <div style={{ marginRight: "1rem" }}>{props.time}</div>
                   <div>{props.date}</div>
                 </Card.Text>
+                <div style={{height:"8rem"}}>
                 <Card.Text>{props.description}</Card.Text>
+                </div>
                 <center>
                   <Button
                     variant="primary"

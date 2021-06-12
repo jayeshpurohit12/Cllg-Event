@@ -30,7 +30,7 @@ const Navbarr = () => {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto">
-            <Nav.Link href="/" style={{ color: "rgb(206, 206, 206)" }}>
+            <Nav.Link to="/" style={{ color: "rgb(206, 206, 206)" }}>
               Home
             </Nav.Link>
             <NavLink to="/Upcomming" style={{ textDecoration: "none" }}>
@@ -53,7 +53,8 @@ const Navbarr = () => {
             {user === null ? (
               <div>
                 <Button
-                  variant="contained"
+                  variant="outline-success"
+                  className="search-btn"
                   color="primary"
                   href="#contained-buttons"
                   onClick={() => {
@@ -63,7 +64,7 @@ const Navbarr = () => {
                         setUser(result.user);
                       })
                       .catch(function (err) {
-                        console.log(err);
+                        alert(err.message);
                       });
                   }}
                 >

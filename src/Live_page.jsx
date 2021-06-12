@@ -22,7 +22,7 @@ const Live_page = () => {
           <h3 className="text-white bg-dark event-heading">LIVE EVENT</h3>
         </p>
       </div>
-      <div className="eventCard">
+      <div className="eventCard" style={{display: "flex"}}>
         {Posts.map(({ id, Posts }) => {
           return (
             <LiveEventList

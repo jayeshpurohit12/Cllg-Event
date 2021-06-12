@@ -4,6 +4,7 @@ import { dbs } from "./firebase.js";
 import PreviousEvent from "./PreviousEvent";
 
 const Previous = () => {
+  var d = new Date();
   const [Posts, setPosts] = useState([]);
   // runs a piece of code on a specific condition
   useEffect(() => {
@@ -16,7 +17,7 @@ const Previous = () => {
       );
     });
   }, []);
-  if(Posts[0]){
+  if (Posts[0]) {
     return (
       <>
         <div className="bg-dark listHeaders" id="Upcomming">
@@ -24,37 +25,61 @@ const Previous = () => {
             <h3 className="text-white bg-dark event-heading">PREVIOUS EVENT</h3>
           </p>
         </div>
-          <div className="eventCard"> 
+        <div className="eventCard" style={{display: "flex"}}>
           {Posts.map(({ id, Posts }) => {
-            return (
-              <PreviousEvent
-                key={id}
-                title={Posts.title}
-                description={Posts.description}
-                Url={Posts.ImageUrl}
-                date={Posts.date}
-                time={Posts.time}
-                Category={Posts.Category}
-                Venue={Posts.Venue}
-              />
-            );
+            if (
+              parseInt(Posts.date.substring(3, 5)) >= d.getMonth() + 1 &&
+              parseInt(Posts.date.substring(6, 10)) >= d.getFullYear()
+            ) {
+              if (
+                parseInt(Posts.date.substring(3, 5)) > d.getMonth() + 1 ||
+                parseInt(Posts.date.substring(0, 2)) > d.getDate()
+              ) {
+                dbs.collection("PreviousPosts").doc(id).delete();
+              }
+            }
+            if (
+              parseInt(Posts.date.substring(3, 5)) <= d.getMonth() + 1 &&
+              parseInt(Posts.date.substring(6, 10)) <= d.getFullYear()
+            ) {
+              if (
+                parseInt(Posts.date.substring(3, 5)) < d.getMonth() + 1 ||
+                parseInt(Posts.date.substring(0, 2)) < d.getDate()
+              ) {
+                return (
+                  <PreviousEvent
+                    key={id}
+                    title={Posts.title}
+                    description={Posts.description}
+                    Url={Posts.ImageUrl}
+                    date={Posts.date}
+                    time={Posts.time}
+                    Category={Posts.Category}
+                    Venue={Posts.Venue}
+                  />
+                );
+              }
+            }
           })}
-          </div>
+        </div>
       </>
     );
-   }
-   else{
+  } else {
     return (
       <>
-      <div className="bg-dark listHeaders" id="Upcomming">
-        <p className="listheaders-head">
-          <h3 className="text-white bg-dark event-heading">PREVIOUS EVENT</h3>
-        </p>
-      </div>
-      <div style={{height:"10rem",paddingTop:"1rem"}}><span style={{marginLeft:"1rem",fontSize:"1.5rem"}}>No event found</span></div>
+        <div className="bg-dark listHeaders" id="Upcomming">
+          <p className="listheaders-head">
+            <h3 className="text-white bg-dark event-heading">PREVIOUS EVENT</h3>
+          </p>
+        </div>
+        <div style={{ height: "10rem", paddingTop: "1rem" }}>
+          <span style={{ marginLeft: "1rem", fontSize: "1.5rem" }}>
+            No event found
+          </span>
+        </div>
       </>
-        );
-        }
+    );
+  }
 };
 
 export default Previous;

@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from "react";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+
 import LiveEventList from "./LiveEventList";
 import { dbs } from "./firebase.js";
 
 const Live = () => {
+
+  var d = new Date();
   const [Posts, setPosts] = useState([]);
   // runs a piece of code on a specific condition
   useEffect(() => {
@@ -16,6 +19,7 @@ const Live = () => {
       );
     });
   }, []);
+  
   if(Posts[0]){
     return (
       <>
@@ -24,20 +28,51 @@ const Live = () => {
             <h3 className="text-white bg-dark event-heading">LIVE EVENT</h3>
           </p>
         </div>
-          <div className="eventCard"> 
+          <div className="eventCard" style={{display: "flex"}}> 
+
           {Posts.map(({ id, Posts }) => {
-            return (
-              <LiveEventList
-                key={id}
-                title={Posts.title}
-                description={Posts.description}
-                Url={Posts.ImageUrl}
-                date={Posts.date}
-                time={Posts.time}
-                Category={Posts.Category}
-                Venue={Posts.Venue}
-              />
-            );
+             if (
+              parseInt(Posts.date.substring(0, 2)) === d.getDate() &&
+              parseInt(Posts.date.substring(3, 5)) === d.getMonth() + 1 &&
+              parseInt(Posts.date.substring(6, 10)) === d.getFullYear()
+            ) { 
+              return (
+                <LiveEventList
+                  key={id}
+                  title={Posts.title}
+                  description={Posts.description}
+                  Url={Posts.ImageUrl}
+                  date={Posts.date}
+                  time={Posts.time}
+                  Category={Posts.Category}
+                  Venue={Posts.Venue}
+                />
+              );
+
+            } 
+            else {
+              
+              dbs.collection('PreviousPosts').add({
+                title: Posts.title,
+                ImageUrl: Posts.ImageUrl,
+                Venue: Posts.Venue,
+                date: Posts.date,
+                time: Posts.time,
+                Category: Posts.Category,
+                description: Posts.description,
+              });
+            
+          
+            } 
+            if (
+              parseInt(Posts.date.substring(3, 5)) <= d.getMonth() + 1 &&
+              parseInt(Posts.date.substring(6, 10)) <= d.getFullYear()
+            ) {       
+              if ((parseInt(Posts.date.substring(3, 5)) < d.getMonth() + 1)||(parseInt(Posts.date.substring(0, 2)) < d.getDate())){
+                dbs.collection("LivePosts").doc(id).delete();
+              }
+            }
+            
           })}
           </div>
       </>

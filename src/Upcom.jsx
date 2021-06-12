@@ -22,21 +22,24 @@ const Upcom = () => {
           <h3 className="text-white bg-dark event-heading">UPCOMMING EVENT</h3>
         </p>
       </div>
-      <div className="eventCard">
+      <div className="eventCard" style={{display: "flex"}}>
         {Posts.map(({ id, Posts }) => {
-          return (
-            <UpcommEventList
-              key={id}
-              title={Posts.Name}
-              description={Posts.description}
-              Url={Posts.ImageUrl}
-              date={Posts.date}
-              time={Posts.time}
-              Category={Posts.Category}
-              Venue={Posts.Venue}
-            />
-          );
-        }
+          
+              return (
+                <UpcommEventList
+                  key={id}
+                  title={Posts.title}
+                  description={Posts.description}
+                  Url={Posts.ImageUrl}
+                  date={Posts.date}
+                  time={Posts.time}
+                  Category={Posts.Category}
+                  Venue={Posts.Venue}
+                />
+              );
+            
+          }
+          
         )
         }
       </div>

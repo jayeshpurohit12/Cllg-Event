@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <>
       <footer className="footer">
-        <div className="footer-left col-md-4 col-sm-6">
+        <div className="footer-left">
           <p className="About">
             <h2 style={{color:"white",padding:"0.5rem"}}>Event Site</h2>
             <p>
@@ -28,7 +28,7 @@ const Footer = () => {
             </a>
           </div>
         </div>
-        <div className="footer-center col-md-4 col-sm-6">
+        <div className="footer-center">
           <div>
             <i className="fa fa-map-marker"></i>
             <p>
@@ -47,7 +47,7 @@ const Footer = () => {
             </p>
           </div>
         </div>
-        <div className="footer-right col-md-4 col-sm-6">
+        <div className="footer-right">
           <h2>
             Eventive
             <img
@@ -62,7 +62,7 @@ const Footer = () => {
           </h2>
           <p className="menu">
             <a href="/">Home</a> | <a href=" ">About</a> |{" "}
-            <a href="/Contact ">Contact</a> | <a href="/Upcomming">Upcomming</a>
+            <a href="/Contact ">Contact</a> | <a href="/Upcomming">Upcomming</a> | {" "}
             <a href="/Previous ">Previous</a> | <a href="/Live">Live</a>
           </p>
           <p className="tag">Copyright © 2021</p>
