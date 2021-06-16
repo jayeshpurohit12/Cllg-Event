@@ -36,10 +36,10 @@ const UpcommEventList = (props) => {
           <Card border="info" style={{ width: "14rem",height:"100%",margin:"auto", boxShadow:"2px 3px 4px grey"}}>
               <Card.Img variant="top" style={{height : "10.3rem"}} src={props.Url} />
               <Card.Body>
-                <Card.Title style={{fontSize:"1.5rem"}}>{props.title}</Card.Title>
+                <Card.Title className="Title_style">{props.title}</Card.Title>
                 <Card.Subtitle className="mb-2 text-muted" style={{ color: "black", display: "flex" }}>
-                <div style={{ marginRight: "0.5rem", padding:"0.5rem" }}>{props.time}</div>
-                <div style={{ marginLeft: "0.5rem",padding:"0.5rem" }}>{props.date}</div>
+                <div style={{ padding:"0.5rem" }}>{props.time}</div>
+                <div style={{ padding:"0.5rem" }}>{props.date}</div>
               </Card.Subtitle>
               <div style={{height:"8rem"}}>
                 <Card.Text>{props.description}</Card.Text>

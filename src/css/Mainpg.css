@@ -1,14 +1,14 @@
 .main-head {
   height: 300px;
-  margin-top: 0.5rem;
-
-  background-color:rgb(197, 204, 164);
+  /* margin-top: 0.5rem; */
+  background:url("https://png.pngtree.com/thumb_back/fh260/back_our/20190619/ourmid/pngtree-spring-sports-event-poster-background-material-image_138484.jpg") no-repeat center/cover;
+  
 }
 .head-name {
   display: flex;
   justify-content: space-between;
   width: 80%;
-  margin: auto auto 0rem auto;
+  margin: 0.7rem auto 0rem auto;
   align-items: center;
 }
 .headtitle {
@@ -24,6 +24,8 @@
 }
 .full-header {
   margin: -5rem auto auto auto;
-  box-shadow: 3px 4px 5px grey;
+  box-shadow: 3px 14px 40px 12px #f86c6c;
   width: 80%;
+  background: url("https://static-cse.canva.com/blob/142648/Swirling-Stars-and-Space-Video-Zoom-Virtual-Background.jpg") no-repeat center/cover; 
+  border-radius: 20px;
 }

@@ -4,4 +4,19 @@
 .navi {
   margin: 1rem auto;
   width: 95%;
+  background-color: white;
 }
+
+.navib::after{
+  content: "";
+  display: block;
+  width: 0px;
+  height: 3px;
+  background: rgb(67, 67, 141);
+  transition: width 0.5s;
+  
+}
+.navib:hover::after {
+  width: 55%;
+}
+

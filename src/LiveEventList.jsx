@@ -4,6 +4,7 @@ import { Card, Button } from "react-bootstrap";
 import { makeStyles } from "@material-ui/core/styles";
 import Modal from "@material-ui/core/Modal";
 import "./css/modal.css";
+import "./css/Live.css";
 
 function getModalStyle() {
   const top = 50;
@@ -33,7 +34,7 @@ const LiveEventList = (props) => {
 
   return (
     <>
-      <div className="event-img-dist" >
+      <div className="event-img-dist">
         <Card
           border="info"
           style={{
@@ -49,19 +50,15 @@ const LiveEventList = (props) => {
             src={props.Url}
           />
           <Card.Body>
-            <Card.Title style={{ fontSize: "1.5rem" }}>
+            <Card.Title className="Title_style">
               {props.title}
             </Card.Title>
             <Card.Subtitle
               className="mb-2 text-muted"
               style={{ color: "black", display: "flex" }}
             >
-              <div style={{ marginRight: "0.5rem", padding: "0.5rem" }}>
-                {props.time}
-              </div>
-              <div style={{ marginLeft: "0.5rem", padding: "0.5rem" }}>
-                {props.date}
-              </div>
+              <div style={{ padding: "0.5rem" }}>{props.time}</div>
+              <div style={{ padding: "0.5rem" }}>{props.date}</div>
             </Card.Subtitle>
             <div style={{ height: "8rem" }}>
               <Card.Text>{props.description}</Card.Text>

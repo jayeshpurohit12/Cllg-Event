@@ -34,7 +34,7 @@ const Create = () => {
     console.log(error);
     alert(error.message);
   },()=>{
-    //const storageRef = storage.ref(`images/${image.name}`);
+    const storageRef = storage.ref(`images/${image.name}`);
     if (
       parseInt(date.substring(3, 5)) >= d.getMonth() + 1 &&
       parseInt(date.substring(6, 10)) >= d.getFullYear()
@@ -128,8 +128,8 @@ else{
   };
   return (
     <>
-    <div className="Create" style={{ backgroundColor: "#ffe387" }}>
-      <IconButton
+    <div className="Create" style={{ background: `url("https://th.bing.com/th/id/OIP.Pafk5mi4S_hv-PwV4A8YLQHaDV?w=306&h=157&c=7&o=5&dpr=1.25&pid=1.7") no-repeat center/cover` }}>
+      <IconButton style={{color:"white"}}
         onClick={() => {
           history.push("/");
         }}
@@ -138,27 +138,26 @@ else{
       </IconButton>
       <Form id="create-form"
         style={{
-          width: "70%",
+          width: "90%",
           margin: "2% auto",
           padding: "2rem",
           borderRadius: "10px",
-          background: "transparent",
-          backgroundColor: "white",
+          backgroundColor:"rgb(255,255,255,0.2)",
           boxShadow: "1px 3px 5px ",
         }}
       >
         <Form.Group controlId="exampleForm.ControlInput1">
           <center>
-            <div style={{ backgroundColor: "lightblue", height: "50px" }}>
+            <div style={{  height: "50px" }}>
               <Form.Label style={{ marginTop: "0.7rem" }}>
-                <strong style={{ fontSize: "20px" }}>CREATE EVENT</strong>
+                <strong style={{ fontSize: "20px",color:"yellow" }}>CREATE EVENT</strong>
               </Form.Label>
             </div>
           </center>
           <Form.Label
             style={{
               fontSize: "18px",
-              color: "#000099",
+              color: "yellow",
               fontWeight: "600",
               marginTop: "1rem",
               padding: "0.5rem",
@@ -174,7 +173,7 @@ else{
           <Form.Label
             style={{
               fontSize: "18px",
-              color: "#000099",
+              color: "yellow",
               fontWeight: "600",
               marginTop: "1rem",
               padding: "0.5rem",
@@ -183,14 +182,14 @@ else{
           >
             Time
           </Form.Label>
-          <Form.Control size="sm" type="text" placeholder="Time"  value={time}
+          <Form.Control size="sm" type="text" placeholder="HH:MM (AM/PM)"  value={time}
             onChange={(e) => {
               setTime(e.target.value);
             }} />
           <Form.Label
             style={{
               fontSize: "18px",
-              color: "#000099",
+              color: "yellow",
               fontWeight: "600",
               marginTop: "1rem",
               padding: "0.5rem",
@@ -199,14 +198,14 @@ else{
           >
             Date
           </Form.Label>
-          <Form.Control size="sm" type="text" placeholder="Date" value={date}
+          <Form.Control size="sm" type="text" placeholder="DD/MM/YYYY" value={date}
             onChange={(e) => {
               setDate(e.target.value);
             }} />
           <Form.Label
             style={{
               fontSize: "18px",
-              color: "#000099",
+              color: "yellow",
               fontWeight: "600",
               marginTop: "1rem",
               padding: "0.5rem",
@@ -224,7 +223,7 @@ else{
           <Form.Label
             style={{
               fontSize: "18px",
-              color: "#000099",
+              color: "yellow",
               fontWeight: "600",
               marginTop: "1rem",
               padding: "0.5rem",
@@ -237,7 +236,7 @@ else{
             onChange={(e) => {
               setCat(e.target.value);
             }}>
-            <option>Null</option>
+            <option>Select a category</option>
             <option>Webinar</option>
             <option>Sport</option>
             <option>Art</option>
@@ -249,7 +248,7 @@ else{
           <Form.Label
             style={{
               fontSize: "18px",
-              color: "#000099",
+              color: "yellow",
               fontWeight: "600",
               marginTop: "1rem",
               padding: "0.5rem",
@@ -268,7 +267,7 @@ else{
             type="file"
             style={{
               fontSize: "18px",
-              color: "#000099",
+              color: "yellow",
               fontWeight: "600",
               marginTop: "1rem",
               padding: "0.5rem",
@@ -277,7 +276,7 @@ else{
           />
         </Form.Group>
         <progress value={progress} max="100"/>
-        <p>Progress : {progress} %</p>
+        <p style={{color: "yellow"}}>Progress : {progress} %</p>
         <br></br>
         <Button onClick={handleUpload}>Submit</Button>
       </Form>

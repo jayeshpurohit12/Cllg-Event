@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
-
+import "./css/Live.css";
 import LiveEventList from "./LiveEventList";
 import { dbs } from "./firebase.js";
 
@@ -23,9 +23,9 @@ const Live = () => {
   if(Posts[0]){
     return (
       <>
-        <div className="bg-dark listHeaders" id="Upcomming">
-          <p className="listheaders-head">
-            <h3 className="text-white bg-dark event-heading">LIVE EVENT</h3>
+        <div className=" listHeaders" id="Upcomming" style={{borderRadius: "50px", backgroundColor: "transparent", border: "2px solid cornsilk", backgroundColor: "white"}}>
+          <p className="listheaders-head" >
+            <h3 className="text-white event-heading" style={{color:"cornsilk", margin:"0.3rem 2rem"}}>LIVE EVENT</h3>
           </p>
         </div>
           <div className="eventCard" style={{display: "flex"}}> 
@@ -50,7 +50,11 @@ const Live = () => {
               );
 
             } 
-            else {
+            if (
+              parseInt(Posts.date.substring(3, 5)) <= d.getMonth() + 1 &&
+              parseInt(Posts.date.substring(6, 10)) <= d.getFullYear()
+            ) {       
+              if ((parseInt(Posts.date.substring(3, 5)) < d.getMonth() + 1)||(parseInt(Posts.date.substring(0, 2)) < d.getDate())) {
               
               dbs.collection('PreviousPosts').add({
                 title: Posts.title,
@@ -61,9 +65,10 @@ const Live = () => {
                 Category: Posts.Category,
                 description: Posts.description,
               });
-            
+              }
+            }
           
-            } 
+             
             if (
               parseInt(Posts.date.substring(3, 5)) <= d.getMonth() + 1 &&
               parseInt(Posts.date.substring(6, 10)) <= d.getFullYear()
@@ -78,18 +83,26 @@ const Live = () => {
       </>
     );
    }
-   else{
-    return (
-      <>
-      <div className="bg-dark listHeaders" id="Upcomming">
-        <p className="listheaders-head">
-          <h3 className="text-white bg-dark event-heading">LIVE EVENT</h3>
-        </p>
-      </div>
-      <div style={{height:"10rem",paddingTop:"1rem"}}><span style={{marginLeft:"1rem",fontSize:"1.5rem"}}>No event found</span></div>
-      </>
-        );
-        }
-};
-
+    else {
+      return (
+        <>
+          <div className=" listHeaders" style={{backgroundColor:"rgb(255,255,255)",borderRadius:"50px", border:"2px solid cornsilk", backgroundColor: "white"}} id="Upcomming">
+            <p className="listheaders-head">
+              <h3 className=" event-heading" style={{margin:"0.3rem 2rem"}}>
+                LIVE EVENT
+              </h3>
+            </p>
+          </div>
+          <div style={{ width:"40%",height: "20rem", paddingTop: "1rem", margin: "auto" }}>
+          <img
+            src="./images/imgr.png"
+            style={{ width: "80%", height: "70%",opacity:"1" }}
+            alt="No event found !!!!"
+          />
+          </div>
+        </>
+      );
+      }
+    }
 export default Live;
+    

@@ -46,6 +46,7 @@ const ContactPage = () => {
   };
   return (
     <>
+    <div>
     <IconButton
     onClick={() => {
       history.push("/");
@@ -53,18 +54,18 @@ const ContactPage = () => {
   >
     <ArrowBackIcon fontSize="small" />
   </IconButton>
-    <section className="contact-section my-5" >
-      <MDBCard style={{borderBox:"2px 3px grey",backgroundColor:"#F5D273",margin:"2rem"}}>
+    
+      <MDBCard style={{boxShadow:"2px 4px 6px  grey",backgroundColor:"rgb(255,255,255,0.4)",margin:"2rem",borderRadius:"5rem",fontSize:"1rem"}}>
         <MDBRow>
           <MDBCol lg="8">
             <MDBCardBody className="form" id="head" >
-              <h3 className="mt-4" style={{color:"purple"}}>
-                <MDBIcon icon="envelope" className="pr-2" style={{color:"purple"}}/>
+              <h3 className="mt-4" style={{color:"blue"}}>
+                <MDBIcon icon="envelope" className="pr-2" style={{color:"blue"}}/>
                 Write to us:
               </h3>
               <MDBRow>
                 <MDBCol md="6">
-                  <div className="md-form mb-0" style={{padding:"1rem", fontWeight:"600",fontSize:"1.2rem"}}>
+                  <div className="md-form mb-0" style={{padding:"1rem", fontWeight:"600",color:"darkred",textShadow:"1px 2px 2px white"}}>
                     Your name
                     <MDBInput
                       //label="Your name"
@@ -78,7 +79,7 @@ const ContactPage = () => {
                   </div>
                 </MDBCol>
                 <MDBCol md="6">
-                  <div className="md-form mb-0" style={{padding:"1rem", fontWeight:"600",fontSize:"1.2rem"}}>
+                  <div className="md-form mb-0" style={{padding:"1rem", fontWeight:"600",color:"darkred",textShadow:"1px 2px 2px white"}}>
                     Your email
                     <MDBInput
                       type="text"
@@ -94,7 +95,7 @@ const ContactPage = () => {
               </MDBRow>
               <MDBRow>
                 <MDBCol md="6">
-                  <div className="md-form mb-0" style={{padding:"1rem", fontWeight:"600",fontSize:"1.2rem"}}>
+                  <div className="md-form mb-0" style={{padding:"1rem", fontWeight:"600",color:"darkred",textShadow:"1px 2px 2px white"}}>
                     Your phone no.
                     <MDBInput
                       type="text"
@@ -108,7 +109,7 @@ const ContactPage = () => {
                   </div>
                 </MDBCol>
                 <MDBCol md="6">
-                  <div className="md-form mb-0" style={{padding:"1rem", fontWeight:"600",fontSize:"1.2rem"}}>
+                  <div className="md-form mb-0" style={{padding:"1rem", fontWeight:"600",color:"darkred",textShadow:"1px 2px 2px white"}}>
                     Your company
                     <MDBInput
                       type="text"
@@ -124,7 +125,7 @@ const ContactPage = () => {
               </MDBRow>
               <MDBRow>
                 <MDBCol md="12">
-                  <div className="md-form mb-0" style={{padding:"1rem", fontWeight:"600",fontSize:"1.2rem"}}>
+                  <div className="md-form mb-0" style={{padding:"1rem", fontWeight:"600",color:"darkred",textShadow:"1px 2px 2px white"}}>
                     Your message
                     <MDBInput
                       type="textarea"
@@ -143,42 +144,42 @@ const ContactPage = () => {
               </MDBRow>
             </MDBCardBody>
           </MDBCol>
-          <MDBCol lg="4">
-            <MDBCardBody className="contact text-center h-100 white-text" id="head"style={{margin:"display"}} >
-              <h3 className="my-4 pb-2" id="head" style={{color:"purple"}}>Contact information</h3>
+          <MDBCol lg="4" style={{height:"30rem",marginTop:"3rem"}}>
+            <MDBCardBody className="contact text-center h-100 white-text" id="head"style={{backgroundColor:"rgb(255,255,255,0.5)",color:"#103c4a",borderRadius:"3rem"}} >
+              <h3 className="my-4 pb-2" id="head" style={{color:"#103c4a",fontSize:"1.5rem"}}>Contact information</h3>
               <ul className="text-lg-left list-unstyled ml-4">
                 <li>
-                  <p style={{padding:"1rem", fontWeight:"600",fontSize:"1.2rem"}}>
+                  <p style={{padding:"1rem", fontWeight:"600"}}>
                     <MDBIcon icon="map-marker-alt" className="pr-2"  />
-                    New York, 94126 USA
+                    AITR, Indore
                   </p>
                 </li>
                 <li>
-                  <p style={{padding:"1rem", fontWeight:"600",fontSize:"1.2rem"}}>
-                    <MDBIcon icon="phone" className="pr-2" />+ 01 234 567 89
+                  <p style={{padding:"1rem", fontWeight:"600"}}>
+                    <MDBIcon icon="phone" className="pr-2" />(+91) 8770 535 206
                   </p>
                 </li>
                 <li>
-                  <p style={{padding:"1rem", fontWeight:"600",fontSize:"1.5rem"}}>
-                    <MDBIcon icon="envelope" className="pr-2"style={{padding:"1rem", fontWeight:"600",fontSize:"1.2rem"}} />
-                    contact@example.com
+                  <p style={{padding:"1rem", fontWeight:"600"}}>
+                    <MDBIcon icon="envelope" className="pr-2"style={{padding:"1rem", fontWeight:"600"}} />
+                    <a href="mailto: jayeshpurohit456789@gmail.com">Mail Us</a>
                   </p>
                 </li>
               </ul>
               <hr className="hr-light my-4" />
               <ul className="list-inline text-center list-unstyled">
                 <li className="list-inline-item">
-                  <a href="#!" className="p-2 fa-lg w-ic">
+                  <a target="_blank" href="https://twitter.com/tech_jayesh" className="p-2 fa-lg w-ic">
                     <MDBIcon fab icon="twitter" />
                   </a>
                 </li>
                 <li className="list-inline-item">
-                  <a href="#!" className="p-2 fa-lg w-ic">
+                  <a target="_blank" href="https://www.linkedin.com/in/jayesh-purohit-yt/" className="p-2 fa-lg w-ic">
                     <MDBIcon fab icon="linkedin-in" />
                   </a>
                 </li>
                 <li className="list-inline-item">
-                  <a href="#!" className="p-2 fa-lg w-ic">
+                  <a target="_blank" href="https://www.instagram.com/jayesh__purohit/" className="p-2 fa-lg w-ic">
                     <MDBIcon fab icon="instagram" />
                   </a>
                 </li>
@@ -187,7 +188,8 @@ const ContactPage = () => {
           </MDBCol>
         </MDBRow>
       </MDBCard>
-    </section>
+  
+    </div>
     </>
   );
 };

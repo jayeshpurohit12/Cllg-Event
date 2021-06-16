@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import { Navbar, Nav, Form, Button } from "react-bootstrap";
-
+import "./css/Navbarr.css";
 import { NavLink } from "react-router-dom";
 import { auth, provider } from "./firebase";
 
@@ -23,28 +23,29 @@ const Navbarr = () => {
       <Navbar
         collapseOnSelect
         expand="lg"
-        bg="dark"
-        variant="dark"
+        //bg="light"
+        // variant="dark"
         className="navi"
+        style={{borderRadius: "28px", backgroundColor: "cornsilk"}}
       >
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="mr-auto">
-            <Nav.Link to="/" style={{ color: "rgb(206, 206, 206)" }}>
+        <Nav className="mr-auto">
+            <Nav.Link to="/"className="navib" style={{ color: "black" }}>
               Home
             </Nav.Link>
             <NavLink to="/Upcomming" style={{ textDecoration: "none" }}>
-              <Nav.Link href=" " style={{ color: "rgb(206, 206, 206)" }}>
+              <Nav.Link href=" "className="navib" style={{ color: "black" }}>
                 Upcomming
               </Nav.Link>
             </NavLink>
             <NavLink to="/Live" style={{ textDecoration: "none" }}>
-              <Nav.Link href=" " style={{ color: "rgb(206, 206, 206)" }}>
+              <Nav.Link href=" "className="navib" style={{ color: "black" }}>
                 Live
               </Nav.Link>
             </NavLink>
             <NavLink to="/Previous" style={{ textDecoration: "none" }}>
-              <Nav.Link href=" " style={{ color: "rgb(206, 206, 206)" }}>
+              <Nav.Link href=" " className="navib" style={{ color: "black" }}>
                 Previous
               </Nav.Link>
             </NavLink>
@@ -56,7 +57,8 @@ const Navbarr = () => {
                   variant="outline-success"
                   className="search-btn"
                   color="primary"
-                  href="#contained-buttons"
+                  
+                  style={{borderRadius: "20px"}}
                   onClick={() => {
                     auth
                       .signInWithPopup(provider)
@@ -74,15 +76,15 @@ const Navbarr = () => {
             ) : (
               <div>
                  <Link to="/Create">
-                  <Button variant="outline-success" className="search-btn">
+                  <Button variant="outline-success" className="search-btn" style={{borderRadius: "20px"}}>
                     Createevent
                   </Button>
                 </Link>
                 <Button
                   variant="outline-success"
                   className="search-btn"
-                  href="#contained-buttons"
-                  style={{ margin: "0rem 0.5rem"}}
+                  
+                  style={{ margin: "0rem 0.5rem", borderRadius: "20px"}}
                   onClick={() => {
                     auth.signOut().then(() => {
                       setUser(null);

@@ -16,6 +16,7 @@ const SlidingBanner = () => {
       );
     });
   }, []);
+  if(Posts[0]){
   return (
     <div className="slide-image">
        <Carousel>
@@ -24,15 +25,15 @@ const SlidingBanner = () => {
    <Carousel.Item>
    <a className="live-tv" href="#Upcomm">
         {" "}
-        <i class="fas fa-stream">Live</i>
+        <i class="fas fa-stream" style={{color:"white"}}>Live</i>
       </a>
       <img
         className="d-block w-100"
         src={Posts.ImageUrl}
         alt="First slide"
       />
-      <Carousel.Caption>
-        <h3>{Posts.title}</h3>
+      <Carousel.Caption style={{fontSize:"1.5rem"}}>
+        {Posts.title}
       </Carousel.Caption>
       </Carousel.Item>
       );
@@ -40,6 +41,30 @@ const SlidingBanner = () => {
         </Carousel>
       </div>
     );
-  }
-
+      }
+      else{
+          return (
+            <>
+             <div className="slide-image">
+       <Carousel>
+   <Carousel.Item>
+   <a className="live-tv" href="#Upcomm">
+        {" "}
+        <i class="fas fa-stream" style={{color:"white"}}>Live</i>
+      </a>
+      <img
+        className="d-block w-100"
+        src="https://img.freepik.com/free-vector/no-data-concept-illustration_114360-626.jpg?size=626&ext=jpg"
+        alt="First slide"
+      />
+      <Carousel.Caption style={{fontSize:"1.5rem",color:"black",margin:"-1rem"}}>
+        <strong>No Live Event</strong>
+      </Carousel.Caption>
+      </Carousel.Item>
+        </Carousel>
+      </div>
+            </>
+          );
+      }
+  };
 export default SlidingBanner;

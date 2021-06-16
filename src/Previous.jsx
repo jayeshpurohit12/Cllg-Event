@@ -20,12 +20,25 @@ const Previous = () => {
   if (Posts[0]) {
     return (
       <>
-        <div className="bg-dark listHeaders" id="Upcomming">
+        <div
+          className=" listHeaders bg-dark"
+          style={{
+            backgroundColor: "grey",
+            borderRadius: "50px",
+            border: "2px solid cornsilk",
+          }}
+          id="Upcomming"
+        >
           <p className="listheaders-head">
-            <h3 className="text-white bg-dark event-heading">PREVIOUS EVENT</h3>
+            <h3
+              className=" event-heading"
+              style={{ margin: "0.3rem 2rem" }}
+            >
+              PREVIOUS EVENT
+            </h3>
           </p>
         </div>
-        <div className="eventCard" style={{display: "flex"}}>
+        <div className="eventCard" style={{ display: "flex" }}>
           {Posts.map(({ id, Posts }) => {
             if (
               parseInt(Posts.date.substring(3, 5)) >= d.getMonth() + 1 &&
@@ -67,15 +80,32 @@ const Previous = () => {
   } else {
     return (
       <>
-        <div className="bg-dark listHeaders" id="Upcomming">
+        <div
+          className=" listHeaders bg-dark"
+          style={{
+            backgroundColor: "grey",
+            borderRadius: "50px",
+            border: "2px solid cornsilk",
+          }}
+          id="Upcomming"
+        >
           <p className="listheaders-head">
-            <h3 className="text-white bg-dark event-heading">PREVIOUS EVENT</h3>
+            <h3
+              className=" event-heading"
+              style={{margin: "0.3rem 2rem" }}
+            >
+              PREVIOUS EVENT
+            </h3>
           </p>
         </div>
-        <div style={{ height: "10rem", paddingTop: "1rem" }}>
-          <span style={{ marginLeft: "1rem", fontSize: "1.5rem" }}>
-            No event found
-          </span>
+        <div style={{ width: "90%", height: "30rem", paddingTop: "1rem" }}>
+          <center>
+            <img
+              src="./images/imgr.png"
+              style={{ width: "35%", height: "20rem", opacity: "1" }}
+              alt="No event found !!!!"
+            />
+          </center>
         </div>
       </>
     );

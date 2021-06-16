@@ -9,7 +9,7 @@
 }
 
 .listHeaders {
-  padding: 0.5rem;
+  
   margin: 1rem 1rem;
 }
 .listheaders-head {
@@ -25,5 +25,23 @@
   margin: 0rem 1.8rem 1rem 0rem;;
   display: flex;
   flex-direction: row;
-  padding-left: 2px;
+  /* padding-left: 2px; */
+
+}
+.Title_style {
+  font-size: 1.5rem;
+  background: -webkit-linear-gradient( 
+    39deg
+     , #FF0000, #00FF00 80%);
+    background-clip: text;
+-webkit-text-fill-color: transparent;
+
+}
+.event-heading {
+  background: -webkit-linear-gradient( 
+90deg
+ , red, yellow 119%);
+background-clip: text;
+-webkit-text-fill-color: transparent;
+font-weight: 900;
 }

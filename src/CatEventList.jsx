@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
-import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import { Card, Button } from "react-bootstrap";
 import { makeStyles } from "@material-ui/core/styles";
 import Modal from "@material-ui/core/Modal";
@@ -26,22 +25,23 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(2, 4, 3),
   },
 }));
-const PreviousEvent = (props) => {
+
+const CatEventList = (props) => {
   const classes = useStyles();
   const [open, setOpen] = useState(false);
   const [modalStyle] = useState(getModalStyle);
       return (
         <>
-          <div className="event-img-dist" style={{alignItems: "center"}}>
-            <Card style={{ width: "15rem" }}>
-              <Card.Img variant="top" style={{height : "10.3rem"}} src={props.Url} />
+          <div className="event-img-dist">
+          <Card border="info" style={{  width: "14rem",height:"100%",margin:"-0.4rem",boxShadow:"2px 3px 4px grey"}}>
+              <Card.Img style={{height:"10.3rem"}} variant="top" src={props.Url} />
               <Card.Body>
-                <Card.Title className="Title_style">{props.title}</Card.Title>
-                <Card.Text style={{ color: "black", display: "flex" }}>
-                  <div style={{ marginRight: "1rem" }}>{props.time}</div>
-                  <div>{props.date}</div>
-                </Card.Text>
-                <div style={{height:"8rem"}}>
+                <Card.Title style={{fontSize:"1.5rem"}}>{props.title}</Card.Title>
+                <Card.Subtitle className="mb-2 text-muted" style={{ color: "black", display: "flex" }}>
+                <div style={{ marginRight: "0.5rem", padding:"0.5rem" }}>{props.time}</div>
+                <div style={{ marginLeft: "0.5rem",padding:"0.5rem" }}>{props.date}</div>
+              </Card.Subtitle>
+              <div style={{height:"8rem"}}>
                 <Card.Text>{props.description}</Card.Text>
                 </div>
                 <center>
@@ -85,5 +85,7 @@ const PreviousEvent = (props) => {
           </Modal>
         </>
       );
+    
 };
-export default PreviousEvent;
+
+export default CatEventList;

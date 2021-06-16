@@ -1,7 +1,7 @@
 .Category-list {
   width: 85%;
   margin: 2rem 1rem;
-  background-color: rgb(214, 212, 212);
+  /* background-color: rgb(214, 212, 212); */
   padding: 0.5rem;
 }
 .facebook {
@@ -16,4 +16,8 @@
 }
 .category {
   font-size: 150%;
+}
+.Cat-list{
+  background-color: aliceblue;
+  padding:1rem;
 }
