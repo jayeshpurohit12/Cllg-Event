@@ -60,7 +60,7 @@ const Upcomming = () => {
               ) {
                 return (
                   <UpcommEventList
-                    key={id}
+                    idp={id}
                     title={Posts.title}
                     description={Posts.description}
                     Url={Posts.ImageUrl}

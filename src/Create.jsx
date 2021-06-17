@@ -128,7 +128,7 @@ else{
   };
   return (
     <>
-    <div className="Create" style={{ background: `url("https://th.bing.com/th/id/OIP.Pafk5mi4S_hv-PwV4A8YLQHaDV?w=306&h=157&c=7&o=5&dpr=1.25&pid=1.7") no-repeat center/cover` }}>
+    <div className="Create">
       <IconButton style={{color:"white"}}
         onClick={() => {
           history.push("/");
@@ -144,6 +144,7 @@ else{
           borderRadius: "10px",
           backgroundColor:"rgb(255,255,255,0.2)",
           boxShadow: "1px 3px 5px ",
+          background: `url("images/createimg.jpg") no-repeat center/cover`
         }}
       >
         <Form.Group controlId="exampleForm.ControlInput1">

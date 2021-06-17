@@ -3,6 +3,10 @@ import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import { Card, Button } from "react-bootstrap";
 import { makeStyles } from "@material-ui/core/styles";
 import Modal from "@material-ui/core/Modal";
+import { dbs } from "./firebase.js";
+import DeleteIcon from '@material-ui/icons/Delete';
+import { IconButton} from "@material-ui/core";
+
 import "./css/modal.css";
 import "./css/Live.css";
 
@@ -28,6 +32,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 const LiveEventList = (props) => {
+  var val=props.idp;
   const classes = useStyles();
   const [open, setOpen] = useState(false);
   const [modalStyle] = useState(getModalStyle);
@@ -35,6 +40,8 @@ const LiveEventList = (props) => {
   return (
     <>
       <div className="event-img-dist">
+      
+        
         <Card
           border="info"
           style={{
@@ -44,6 +51,7 @@ const LiveEventList = (props) => {
             boxShadow: "2px 3px 4px grey",
           }}
         >
+         
           <Card.Img
             variant="top"
             style={{ height: "10.3rem" }}
@@ -55,7 +63,7 @@ const LiveEventList = (props) => {
             </Card.Title>
             <Card.Subtitle
               className="mb-2 text-muted"
-              style={{ color: "black", display: "flex" }}
+              style={{ color: "black", display: "flex",width:"100%"}}
             >
               <div style={{ padding: "0.5rem" }}>{props.time}</div>
               <div style={{ padding: "0.5rem" }}>{props.date}</div>
@@ -63,7 +71,7 @@ const LiveEventList = (props) => {
             <div style={{ height: "8rem" }}>
               <Card.Text>{props.description}</Card.Text>
             </div>
-            <center>
+              <div>
               <Button
                 variant="primary"
                 className="event_btn"
@@ -71,12 +79,26 @@ const LiveEventList = (props) => {
               >
                 View Details
               </Button>
-            </center>
+              <IconButton onClick ={
+               ()=>{ var r=prompt("Are you sure you want to delete (Yes/No)");
+               if(r!==null){
+               var x=r.toLowerCase() ;
+               if (x=="yes") {
+                dbs.collection("LivePosts").doc(val).delete();
+               }
+              }
+                
+             }
+             } color="secondary" aria-label="delete" style={{float:"right",padding:"0.5rem 0.9rem"}}>
+              <DeleteIcon  />
+              </IconButton>
+             </div>
+            
           </Card.Body>
         </Card>
       </div>
 
-      <Modal open={open} onClose={() => setOpen(false)}>
+      <Modal style={{margin:"1rem",border:"1px solid blue"}}open={open} onClose={() => setOpen(false)}>
         <div style={modalStyle} className={classes.paper}>
           <h4>
             <div>

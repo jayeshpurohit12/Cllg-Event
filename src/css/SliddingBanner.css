@@ -1,5 +1,5 @@
 .slide-image {
-  width: 94%;
+  width: 95%;
   padding:2rem;
   margin:auto;
   padding-top:0rem;
@@ -30,7 +30,7 @@ margin:auto;
   width:100%;
 }
 .slide-image img{
-  width: 44rem;
+  width: 100%;
   height:15rem;
 }
 }

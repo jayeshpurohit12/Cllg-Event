@@ -12,9 +12,12 @@
   align-items: center;
 }
 .headtitle {
-  font-family: "Dancing Script";
-  font-size: 2rem;
-  font-weight: 600;
+  /* font-family: Cursive, serif; */
+    font-size: 2rem;
+    font-weight: 900;
+    color:rgb(7, 45, 72);
+    /* box-shadow: 1px 4px 7px rgb(0, 0, 0); */
+    text-shadow:1px 3px white;
 }
 .head-name a i {
   background-color: white;
@@ -23,9 +26,18 @@
   margin: 0.5rem;
 }
 .full-header {
-  margin: -5rem auto auto auto;
+  margin: -5rem auto 3rem auto;
   box-shadow: 3px 14px 40px 12px #f86c6c;
   width: 80%;
   background: url("https://static-cse.canva.com/blob/142648/Swirling-Stars-and-Space-Video-Zoom-Virtual-Background.jpg") no-repeat center/cover; 
   border-radius: 20px;
+  
+}
+
+                    /* Media Query */
+
+@media screen and (max-width: 600px) {
+  .head-name {
+    margin-top: 1.8rem;
+  }
 }

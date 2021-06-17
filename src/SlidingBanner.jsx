@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import { Carousel } from "react-bootstrap";
-
 import { dbs } from "./firebase.js";
 
 const SlidingBanner = () => {

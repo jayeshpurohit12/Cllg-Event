@@ -17,6 +17,7 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  margin-top: 0.5rem;
 }
 .listheaders-head h3 {
   font-size: 150%;
@@ -25,14 +26,15 @@
   margin: 0rem 1.8rem 1rem 0rem;;
   display: flex;
   flex-direction: row;
-  padding-left: 10px;
+  padding-left: 30px;
 }
 /* Media Query */
 
-@media screen and (max-width:500px) {
+@media screen and (max-width:610px) {
   .event-img-dist {
     margin: auto;
     padding-bottom: 1rem;
+    padding-left: 0px;
   }
 }
 .Title_style {

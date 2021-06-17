@@ -4,6 +4,7 @@ import "./css/Live.css";
 import LiveEventList from "./LiveEventList";
 import { dbs } from "./firebase.js";
 
+
 const Live = () => {
 
   var d = new Date();
@@ -28,7 +29,7 @@ const Live = () => {
             <h3 className="text-white event-heading" style={{color:"cornsilk", margin:"0.3rem 2rem"}}>LIVE EVENT</h3>
           </p>
         </div>
-          <div className="eventCard" style={{display: "flex"}}> 
+          <div className="eventCard" style={{display: "flex", margin: "0rem -0.8rem;"}}> 
 
           {Posts.map(({ id, Posts }) => {
              if (
@@ -38,7 +39,7 @@ const Live = () => {
             ) { 
               return (
                 <LiveEventList
-                  key={id}
+                idp={id}
                   title={Posts.title}
                   description={Posts.description}
                   Url={Posts.ImageUrl}

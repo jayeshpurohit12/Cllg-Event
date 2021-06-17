@@ -9,7 +9,7 @@ const Categories = () => {
     <>
       <div className="listHeaders" id="Upcomming" style={{borderRadius: "50px", backgroundColor: "transparent", border: "2px solid cornsilk", backgroundColor: "white"}}>
         <p className="listheaders-head">
-          <span className="text-white category event-heading" style={{borderRadius:"50px",margin:"0.3rem 2rem"}}>CATEGORIES</span>
+          <span className="text-white category event-heading" style={{borderRadius:"50px",margin: "auto"}}>CATEGORIES</span>
         </p>
       </div>
       <div className="Category-list">
@@ -22,7 +22,7 @@ const Categories = () => {
      
       <div className=" listHeaders" id="Upcomming" style={{borderRadius: "50px", backgroundColor: "transparent", border: "2px solid cornsilk", backgroundColor: "white"}}>
         <p className="listheaders-head">
-          <span className="text-white category event-heading" style={{borderRadius:"50px",margin:"0.3rem 2rem"}}>FACEBOOK</span>
+          <span className="text-white category event-heading" style={{borderRadius:"50px",margin:"auto"}}>FACEBOOK</span>
         </p>
       </div>
       <div className="facebook">

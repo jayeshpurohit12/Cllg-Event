@@ -26,7 +26,7 @@ const Navbarr = () => {
         //bg="light"
         // variant="dark"
         className="navi"
-        style={{borderRadius: "28px", backgroundColor: "cornsilk"}}
+        style={{borderRadius: "28px", backgroundColor: "floralwhite"}}
       >
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
