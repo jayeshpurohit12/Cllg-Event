@@ -31,7 +31,7 @@ const SlidingBanner = () => {
         src={Posts.ImageUrl}
         alt="First slide"
       />
-      <Carousel.Caption style={{fontSize:"1.5rem"}}>
+      <Carousel.Caption style={{fontSize:"1.5rem", fontWeight: "700", textShadow: "1px 3px 4px black"}}>
         {Posts.title}
       </Carousel.Caption>
       </Carousel.Item>

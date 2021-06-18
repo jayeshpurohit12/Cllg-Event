@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import { Card, Button } from "react-bootstrap";
 import { makeStyles } from "@material-ui/core/styles";
 import { dbs } from "./firebase.js";
 import DeleteIcon from '@material-ui/icons/Delete';
 import { IconButton} from "@material-ui/core";
+import { auth } from "./firebase";
 import Modal from "@material-ui/core/Modal";
 import "./css/modal.css";
 function getModalStyle() {
@@ -30,10 +31,22 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const UpcommEventList = (props) => {
+
   var val=props.idp;
   const classes = useStyles();
   const [open, setOpen] = useState(false);
   const [modalStyle] = useState(getModalStyle);
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    auth.onAuthStateChanged((authUser) => {
+      if (authUser) {
+        setUser(authUser);
+      } else {
+        setUser(null);
+      }
+    });
+  }, []);
       return (
         <>
           <div className="event-img-dist" style={{alignItems: "center"}}>
@@ -48,28 +61,43 @@ const UpcommEventList = (props) => {
               <div style={{height:"8rem"}}>
                 <Card.Text>{props.description}</Card.Text>
                 </div>
+               
+              {(user === null) ? (
                 <div>
-              <Button
-                variant="primary"
-                className="event_btn"
-                onClick={() => setOpen(true)}
-              >
-                View Details
-              </Button>
+                 <center>
+                 <Button
+                   variant="primary"
+                   className="event_btn"
+                   onClick={() => setOpen(true)}
+                 >
+                   View Details
+                 </Button>
+                 </center>
+                 </div>
+              ):(
+                <div>
+                 <Button
+                   variant="primary"
+                   className="event_btn"
+                   onClick={() => setOpen(true)}
+                 >
+                 View Details
+                 </Button>
               <IconButton onClick ={
                ()=>{ var r=prompt("Are you sure you want to delete (Yes/No)");
-               if(r!=null){
+               if(r!==null){
                var x=r.toLowerCase() ;
-               if (x=="yes") {
+               if (x==="yes") {
                 dbs.collection("UpcommingPosts").doc(val).delete();
-               }
+               } 
               }
-                
              }
              } color="secondary" aria-label="delete" style={{float:"right",padding:"0.5rem 0.9rem"}}>
               <DeleteIcon  />
               </IconButton>
              </div>
+              )
+            }
               </Card.Body>
             </Card>
           </div>
@@ -105,4 +133,4 @@ const UpcommEventList = (props) => {
     
 };
 
-export default UpcommEventList
+export default UpcommEventList;
